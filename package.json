@@ -1,8 +1,7 @@
 {
   "name": "apollo-upload-client",
   "version": "8.0.0",
-  "description":
-    "Enhances Apollo Client for intuitive file uploads via GraphQL mutations.",
+  "description": "Enhances Apollo Client for intuitive file uploads via GraphQL mutations.",
   "license": "MIT",
   "author": {
     "name": "Jayden Seric",
@@ -26,7 +25,9 @@
     "react",
     "native"
   ],
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/main",
   "module": "lib/module",
   "engines": {
@@ -63,7 +64,7 @@
     "build": "run-p build:*",
     "build:main": "babel src -d lib/main",
     "build:module": "cross-env MODULE=true babel src -d lib/module",
-    "postbuild": "prettier 'lib/**/*.js' --write",
+    "_postbuild": "prettier 'lib/**/*.js' --write",
     "prewatch": "npm run clean",
     "watch": "run-p 'build:* -- --watch'",
     "lint": "run-p lint:*",
@@ -72,14 +73,18 @@
     "fix": "run-p fix:*",
     "fix:eslint": "eslint . --fix",
     "fix:prettier": "prettier '**/*.{json,md}' --write",
-    "precommit": "lint-staged",
-    "prepublishOnly": "run-p lint build"
+    "_precommit": "lint-staged",
+    "_prepublishOnly": "run-p lint build"
   },
   "lint-staged": {
     "*.js": "eslint",
     "*.{json,md}": "prettier -l"
   },
-  "eslintIgnore": ["!.*", "node_modules", "lib"],
+  "eslintIgnore": [
+    "!.*",
+    "node_modules",
+    "lib"
+  ],
   "eslintConfig": {
     "parserOptions": {
       "sourceType": "module",
@@ -93,10 +98,17 @@
       "node": true,
       "browser": true
     },
-    "extends": ["eslint:recommended"],
-    "plugins": ["prettier"],
+    "extends": [
+      "eslint:recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
-      "curly": ["error", "multi"],
+      "curly": [
+        "error",
+        "multi"
+      ],
       "prettier/prettier": "error"
     }
   },
